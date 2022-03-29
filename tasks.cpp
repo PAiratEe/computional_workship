@@ -217,4 +217,6 @@ void task_4() {
     cout << "КФ 3/8" << endl
          << "Значение интеграла: " << setprecision(15) << three_eights(a, b) << endl
          << "Абсолютная погрешность: " << setprecision(15) << abs(J - three_eights(a, b)) << endl << endl;
+
+    cout << "Шалость удалась!";
 }
