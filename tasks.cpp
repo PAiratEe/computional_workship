@@ -185,11 +185,36 @@ void task_3_2() {
 
 void task_4() {
     cout << "ПРИБЛИЖЕННОЕ ВЫЧИСЛЕНИЕ ИНТЕГРАЛА ПО КВАДРАТУРНЫМ ФОРМУЛАМ" << endl;
-//         << "13-ый вариант" << endl
-//         << "f(x) = exp(6x)" << endl;
 
     double a, b;
 
     cout << "Отрезок: ";
     cin >> a >> b;
+
+    double J = integral(a, b);
+    cout << "Точное значение интеграла: " << setprecision(15) << J << endl << endl;
+
+    cout << "КФ левого прямоугольника" << endl
+         << "Значение интеграла: " << setprecision(15) << left_rec(a, b) << endl
+         << "Абсолютная погрешность: " << setprecision(15) << abs(J - left_rec(a, b)) << endl << endl;
+
+    cout << "КФ правого прямоугольника" << endl
+         << "Значение интеграла: " << setprecision(15) << right_rec(a, b) << endl
+         << "Абсолютная погрешность: " << setprecision(15) << abs(J - right_rec(a, b)) << endl << endl;
+
+    cout << "КФ среднего прямоугольника" << endl
+         << "Значение интеграла: " << setprecision(15) << mid_rec(a, b) << endl
+         << "Абсолютная погрешность: " << setprecision(15) << abs(J - mid_rec(a, b)) << endl << endl;
+
+    cout << "КФ трапеции" << endl
+         << "Значение интеграла: " << setprecision(15) << trap(a, b) << endl
+         << "Абсолютная погрешность: " << setprecision(15) << abs(J - trap(a, b)) << endl << endl;
+
+    cout << "КФ Симпсона" << endl
+         << "Значение интеграла: " << setprecision(15) << Simpson(a, b) << endl
+         << "Абсолютная погрешность: " << setprecision(15) << abs(J - Simpson(a, b)) << endl << endl;
+
+    cout << "КФ 3/8" << endl
+         << "Значение интеграла: " << setprecision(15) << three_eights(a, b) << endl
+         << "Абсолютная погрешность: " << setprecision(15) << abs(J - three_eights(a, b)) << endl << endl;
 }
