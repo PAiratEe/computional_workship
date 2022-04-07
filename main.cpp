@@ -28,7 +28,18 @@ int main() {
             }
             break;
         case 4:
-            task_4();
+            cout << "4.1 или 4.2/4.3? ";
+            cin >> task;
+            switch(task) {
+                case 1:
+                    task_4_1();
+                    break;
+                case 2:
+                    task_4_2_3();
+                    break;
+                default:
+                    cout << "Шалость удалась!";
+            }
             break;
         default:
             cout << "Шалость удалась!";
