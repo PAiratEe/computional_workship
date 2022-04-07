@@ -138,8 +138,9 @@ double runge(double J_h, double J_h_l, long long l, double d) {
 
 double maximo(double a, double b, long long m, int d, int integralchik) {
     double h = (b - a) / m;
+    double res;
     if (d == 0) {
-        double res = dfunc(a, integralchik);
+        res = dfunc(a, integralchik);
         while (a < b) {
             a += h;
             if (dfunc(a, integralchik) > res)
@@ -147,7 +148,7 @@ double maximo(double a, double b, long long m, int d, int integralchik) {
         }
     }
     else if (d == 1) {
-        double res = d2func(a, integralchik);
+        res = d2func(a, integralchik);
         while (a < b) {
             a += h;
             if (d2func(a, integralchik) > res)
@@ -155,11 +156,12 @@ double maximo(double a, double b, long long m, int d, int integralchik) {
         }
     }
     else if (d == 3) {
-        double res = d4func(a, integralchik);
+        res = d4func(a, integralchik);
         while (a < b) {
             a += h;
             if (d4func(a, integralchik) > res)
                 res = d4func(a, integralchik);
         }
     }
+    return res;
 }
