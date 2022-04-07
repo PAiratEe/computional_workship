@@ -136,7 +136,7 @@ double runge(double J_h, double J_h_l, long long l, double d) {
     return (pow(l, r) * J_h_l - J_h) / (pow(l, r) - 1);
 }
 
-double maximo(double a, double b, double m, int d, int integralchik) {
+double maximo(double a, double b, long long m, int d, int integralchik) {
     double h = (b - a) / m;
     if (d == 0) {
         double res = dfunc(a, integralchik);

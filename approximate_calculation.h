@@ -46,6 +46,6 @@ double com_Simpson(double a, double b, long long m, int integralchik);
 
 double runge(double J_h, double J_h_l, long long l, double d);
 
-double maximo(double a, double b, double m, int d, int integralchik);
+double maximo(double a, double b, long long m, int d, int integralchik);
 
 #endif //COMPUTIONAL_WORKSHIP_APPROXIMATE_CALCULATION_H
