@@ -309,27 +309,27 @@ void task_4_2_3() {
             cout << "КФ левого прямоугольника" << endl
                  << "Значение интеграла: " << setprecision(15) << com_left_rec(a, b, m, integralchik) << endl
                  << "Абсолютная погрешность: " << setprecision(15) << abs(J - com_left_rec(a, b, m, integralchik)) << endl
-                 << "Теоретическая погрешность: " << setprecision(15) << 0.5 * (b - a) * pow(h, 1) * maximo(a, b, m, 0, integralchik) << endl << endl;
+                 << "Теоретическая погрешность: " << setprecision(15) << 0.5 * (b - a) * h * maximo(a, b, m, 0, integralchik) << endl << endl;
 
             cout << "КФ правого прямоугольника" << endl
                  << "Значение интеграла: " << setprecision(15) << com_right_rec(a, b, m, integralchik) << endl
                  << "Абсолютная погрешность: " << setprecision(15) << abs(J - com_right_rec(a, b, m, integralchik)) << endl
-                 << "Теоретическая погрешность: " << setprecision(15) << 0.5 * (b - a) * pow(h, 1) * maximo(a, b, m, 0, integralchik) << endl << endl;
+                 << "Теоретическая погрешность: " << setprecision(15) << 0.5 * (b - a) * h * maximo(a, b, m, 0, integralchik) << endl << endl;
 
             cout << "КФ среднего прямоугольника" << endl
                  << "Значение интеграла: " << setprecision(15) << com_mid_rec(a, b, m, integralchik) << endl
                  << "Абсолютная погрешность: " << setprecision(15) << abs(J - com_mid_rec(a, b, m, integralchik)) << endl
-                 << "Теоретическая погрешность: " << setprecision(15) << 1 / 24 * (b - a) * pow(h, 2) * maximo(a, b, m, 1, integralchik) << endl << endl;
+                 << "Теоретическая погрешность: " << setprecision(15) << (b - a) * h * h * maximo(a, b, m, 1, integralchik) / 24 << endl << endl;
 
             cout << "КФ трапеции" << endl
                  << "Значение интеграла: " << setprecision(15) << com_trap(a, b, m, integralchik) << endl
                  << "Абсолютная погрешность: " << setprecision(15) << abs(J - com_trap(a, b, m, integralchik)) << endl
-                 << "Теоретическая погрешность: " << setprecision(15) << 1 / 12 * (b - a) * pow(h, 2) * maximo(a, b, m, 1, integralchik) << endl << endl;
+                 << "Теоретическая погрешность: " << setprecision(15) << (b - a) * h * h * maximo(a, b, m, 1, integralchik) / 12 << endl << endl;
 
             cout << "КФ Симпсона" << endl
                  << "Значение интеграла: " << setprecision(15) << com_Simpson(a, b, m, integralchik) << endl
                  << "Абсолютная погрешность: " << setprecision(15) << abs(J - com_Simpson(a, b, m, integralchik)) << endl
-                 << "Теоретическая погрешность: " << setprecision(15) << 1 / 2880 * (b - a) * pow(h, 4) * maximo(a, b, m, 3, integralchik) << endl << endl;
+                 << "Теоретическая погрешность: " << setprecision(15) << (b - a) * h * h * h * h * maximo(a, b, m, 3, integralchik) / 2880 << endl << endl;
 
             cout << "Теперь приступим к заданию 4.3" << endl
                  << "Введите l: ";
@@ -398,7 +398,6 @@ void task_4_2_3() {
                  << "Значение интеграла: " << setprecision(15) << com_left_rec(a, b, m * l, integralchik) << endl
                  << "Абсолютная погрешность: " << setprecision(15) << abs(J - com_left_rec(a, b, m * l, integralchik)) << endl
                  << "Погрешность для уточненных значений: " << setprecision(15) << abs(J - runge(com_left_rec(a, b, m, integralchik), com_left_rec(a, b, m * l, integralchik), l, 0)) << endl << endl;
-
 
             cout << "КФ правого прямоугольника" << endl
                  << "Значение интеграла: " << setprecision(15) << com_right_rec(a, b, m * l, integralchik) << endl

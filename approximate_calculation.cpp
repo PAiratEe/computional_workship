@@ -140,28 +140,31 @@ double maximo(double a, double b, long long m, int d, int integralchik) {
     double h = (b - a) / m;
     double res;
     if (d == 0) {
-        res = dfunc(a, integralchik);
+        res = abs(dfunc(a, integralchik));
         while (a < b) {
             a += h;
-            if (dfunc(a, integralchik) > res)
-                res = dfunc(a, integralchik);
+            if (abs(dfunc(a, integralchik)) > res)
+                res = abs(dfunc(a, integralchik));
         }
+        //res = abs(dfunc(b, integralchik));
     }
     else if (d == 1) {
-        res = d2func(a, integralchik);
+        res = abs(d2func(a, integralchik));
         while (a < b) {
             a += h;
-            if (d2func(a, integralchik) > res)
-                res = d2func(a, integralchik);
+            if (abs(d2func(a, integralchik)) > res)
+                res = abs(d2func(a, integralchik));
         }
+        //res = abs(d2func(b, integralchik));
     }
     else if (d == 3) {
-        res = d4func(a, integralchik);
+        res = abs(d4func(a, integralchik));
         while (a < b) {
             a += h;
-            if (d4func(a, integralchik) > res)
-                res = d4func(a, integralchik);
+            if (abs(d4func(a, integralchik)) > res)
+                res = abs(d4func(a, integralchik));
         }
+        //res = abs(d4func(b, integralchik));
     }
     return res;
 }
