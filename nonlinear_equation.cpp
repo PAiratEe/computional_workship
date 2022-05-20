@@ -1,7 +1,7 @@
 #include "lib.h"
 
 double f_f(double x) {    // возвращает значение функции
-    return sin(x) + x * x * x - 9 * x + 3;
+    return (35 * x * x * x * x - 30 * x * x + 3) / 8;
 }
 
 double df_f(double x) {   // возвращает значение производной

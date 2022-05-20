@@ -10,6 +10,7 @@
 #include "reverse_interpolation.h"
 #include "numerical_differentiation.h"
 #include "approximate_calculation.h"
+#include "quadrature_formulas.h"
 
 using namespace std;
 
