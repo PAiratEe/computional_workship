@@ -1,16 +1,27 @@
 #include "approximate_calculation.h"
 
+//double func(double x, int integralchik) {
+//    if (integralchik == -1)
+//        return sin(x) + exp(3 * x) - x; // легко берущийся интеграл
+//    else if (integralchik == 0)
+//        return - 2.434;
+//    else if (integralchik == 1)
+//        return 2 * x;
+//    else if (integralchik == 2)
+//        return 1.432 * x * x;
+//    else if (integralchik == 3)
+//        return -4 * x * x * x + 1.432 * x * x + 2 * x - 2.434;
+//}
+
 double func(double x, int integralchik) {
-    if (integralchik == -1)
-        return sin(x) + exp(3 * x) - x; // легко берущийся интеграл
-    else if (integralchik == 0)
-        return - 2.434;
+    if (integralchik == 0)
+        return exp(-x);
     else if (integralchik == 1)
-        return 2 * x;
+        return x * exp(-x);
     else if (integralchik == 2)
-        return 1.432 * x * x;
+        return x * x * exp(-x);
     else if (integralchik == 3)
-        return -4 * x * x * x + 1.432 * x * x + 2 * x - 2.434;
+        return x * x * x * exp(-x);
 }
 
 double dfunc(double x, int integralchik) {
