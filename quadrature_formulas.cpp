@@ -12,6 +12,10 @@ double f_ff(double x) {
     return sin(x) * exp(-x);
 }
 
+double pogr() {
+    return (-sin(1) - cos(1)) / (2 * exp(1)) + 0.5;
+}
+
 double Legendre(int n, double x) {
     if (n == 0)
         return 1;
@@ -106,8 +110,10 @@ void root_sep_2(double x_i, double x_ii, double epsilon, int n, int m, double a,
 
     }
 
-    if (a != -1)
+    if (a != -1) {
         cout << "Полученное значение интеграла равно " << setprecision(12) << res * h_1 / 2 << endl;
+        cout << "Погрешность равна " << setprecision(12) << abs(res * h_1 / 2 - pogr()) << endl;
+    }
 }
 
 double secc_method(double A, double B, double epsilon, double p, double q) {
@@ -145,9 +151,12 @@ void r_s(double A, double B, int m, double epsilon, double p, double q) {
     double A_2 = (mu_1 - mu_0 * x_m[0]) / (x_m[1] - x_m[0]);
 //    cout << A_1 << " + " << A_2 << " = " << A_1 + A_2 << " " << mu_0 << endl;
 //    cout << A_1 << " * " << x_m[0] << " + " <<  A_2 << " * " << x_m[1] << " = " << A_1 * x_m[0] + A_2 * x_m[1] << " " << mu_1 << endl;
-    cout << x_m[0] << " " << x_m[1] << endl;
-    cout << A_1 << " " << A_2 << endl;
-    cout << A_1 * sin(x_m[0]) + A_2 * sin(x_m[1]) << endl;
+    cout << "Вывод узлов и коэффициентов:" << endl;
+    cout << "x_k = " << setprecision(12) << x_m[0] << " <-> A_k = " << setprecision(12) << A_1 << endl;
+    cout << "x_k = " << setprecision(12) << x_m[1] << " <-> A_k = " << setprecision(12) << A_2 << endl;
+    cout << "Полученное значение интеграла равно " << setprecision(12) << A_1 * sin(x_m[0]) + A_2 * sin(x_m[1]) << endl;
+    cout << "Погрешность равна " << setprecision(12) << abs(A_1 * sin(x_m[0]) + A_2 * sin(x_m[1]) - pogr()) << endl;
+    //cout << "Погрешность равна " << setprecision(12) << abs(A_1 * x_m[0] * x_m[0] * x_m[0] + A_2 * x_m[1] * x_m[1] * x_m[1] - com_mid_rec(A, B, m, 3)) << endl;
 }
 
 void calc(double a, double b, int m) {
@@ -159,7 +168,9 @@ void calc(double a, double b, int m) {
     double q = (-mu_3 * mu_1 + mu_2 * mu_2) / (mu_1 * mu_1 - mu_0 * mu_2);
 //    cout << mu_2 + p * mu_1 + q * mu_0 << endl;
 //    cout << mu_3 + p * mu_2 + q * mu_1 << endl;
-    cout << mu_0 << " " << mu_1 << " " << mu_2 << " " << mu_3 << endl;
-    cout << "x^2 + (" << p << ") * x + " << q << endl;
+    cout << "Вывод весовых моментов:" << endl
+         << setprecision(12) << mu_0 << " " << setprecision(12) << mu_1 << " " << setprecision(12) << mu_2 << " " << setprecision(12) << mu_3 << endl;
+    cout << "Вывод ортоганльного многочлена:" << endl
+         << "x^2 + (" << setprecision(12) << p << ") * x + " << setprecision(12) << q << endl;
     r_s(a, b, m, 0.000000000001, p, q);
 }

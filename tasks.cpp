@@ -528,7 +528,7 @@ void task_6() {
     while (key != 'q') {
         cout << "Введите N: ";
         cin >> n;
-        cout << "Введите m: ";
+        cout << "Введите количество разбиений m: ";
         cin >> m;
         root_sep(-1, 1, epsilon, n, -1, 1);
         cout << "Введите пределы интегрирования: " << endl;
