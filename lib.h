@@ -11,6 +11,7 @@
 #include "numerical_differentiation.h"
 #include "approximate_calculation.h"
 #include "quadrature_formulas.h"
+#include "diff_eq.h"
 
 using namespace std;
 

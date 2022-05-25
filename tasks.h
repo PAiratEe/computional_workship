@@ -19,4 +19,6 @@ void task_5();
 
 void task_6();
 
+void task_7();
+
 #endif //COMPUTIONAL_WORKSHIP_TASKS_H

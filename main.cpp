@@ -46,6 +46,8 @@ int main() {
             break;
         case 6:
             task_6();
+        case 7:
+            task_7();
         default:
             cout << "Шалость удалась!";
     }
