@@ -562,12 +562,6 @@ void task_7() {
         cin >> h;
         double x_0 = 0;
         double y_0 = 0.25;
-//        table eta;
-//        for (int i = 0; i <= 5; i++) {
-//            eta.knot.push_back(x_0 + (i - 2) * h);
-//            eta.value.push_back(Taylor(x_0, y_0, h, i));
-//        }
-//        eta.num = 5;
         cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
         for (int i = -2; i <= n; i++) {
             cout << "При x = " << x_0 + i * h << endl
